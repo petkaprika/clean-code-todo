@@ -97,21 +97,23 @@ const deleteTask = function () {
   ul.removeChild(listItem);
 };
 
+const moveTask = function (taskListItem, targetList, checkBoxEventHandler) {
+  const listItem = taskListItem.parentNode;
+  targetList.appendChild(listItem);
+  bindTaskEvents(listItem, checkBoxEventHandler);
+};
+
 //Mark task completed
 const taskCompleted = function () {
   //Append the task list item to the #completed-tasks
-  const listItem = this.parentNode;
-  completedTasksHolder.appendChild(listItem);
-  bindTaskEvents(listItem, taskIncomplete);
+  moveTask(this, completedTasksHolder, taskIncomplete);
 };
 
 const taskIncomplete = function () {
   //Mark task as incomplete.
   //When the checkbox is unchecked
   //Append the task list item to the #incompleteTasks.
-  const listItem = this.parentNode;
-  incompleteTaskHolder.appendChild(listItem);
-  bindTaskEvents(listItem, taskCompleted);
+  moveTask(this, incompleteTaskHolder, taskCompleted);
 };
 
 //The glue to hold it all together.
