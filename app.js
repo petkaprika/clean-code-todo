@@ -1,16 +1,16 @@
-const taskInput = document.getElementById('new-task'); 
+const taskInput = document.getElementById('new-task');
 const addButton = document.getElementsByTagName('button')[0];
-const incompleteTaskHolder = document.getElementById('incompleteTasks'); 
+const incompleteTaskHolder = document.getElementById('incompleteTasks');
 const completedTasksHolder = document.getElementById('completed-tasks');
 
 const createNewTaskElement = function (taskText) {
   const listItem = document.createElement('li');
-  const checkBox = document.createElement('input'); 
-  const label = document.createElement('label'); 
-  const editInput = document.createElement('input'); 
-  const editButton = document.createElement('button'); 
-  const deleteButton = document.createElement('button'); 
-  const deleteButtonImg = document.createElement('img'); 
+  const checkBox = document.createElement('input');
+  const label = document.createElement('label');
+  const editInput = document.createElement('input');
+  const editButton = document.createElement('button');
+  const deleteButton = document.createElement('button');
+  const deleteButtonImg = document.createElement('img');
 
   label.innerText = taskText;
   label.className = 'task';
